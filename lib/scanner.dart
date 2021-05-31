@@ -60,6 +60,14 @@ class _ScanQRState extends State<ScanQR> {
     data = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(icon:Icon(Icons.arrow_back),
+          padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
+          color: Colors.black,
+          iconSize: 40,
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, '/');
+          },
+        ),
         title: Text(
           data['name'],
           style: TextStyle(
@@ -72,7 +80,7 @@ class _ScanQRState extends State<ScanQR> {
                   colors:[Color(0xFF93a5cf), Color(0xFFe4efe9)]
               )),
         ),
-        elevation: 5,
+        elevation: 10,
         centerTitle: true,
         backgroundColor: Colors.white,
         toolbarHeight: 150,
